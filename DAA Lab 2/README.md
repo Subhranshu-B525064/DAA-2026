@@ -12,7 +12,54 @@
 
 # 1.Dictionary Operations:
 
-## Time Complexities
+## Problem Statement
+
+Consider a Dictionary (D) Abstract Data Type that permits access to data items by their content (key).
+
+The primary operations are:
+
+- Search(D, k)
+- Insert(D, x)
+- Delete(D, x)
+- Minimum(D)
+- Maximum(D)
+- Predecessor(D, x)
+- Successor(D, x)
+
+Implement the Dictionary ADT using the following six data structures:
+
+1. Unsorted Array
+2. Sorted Array
+3. Singly Linked Unsorted List
+4. Singly Linked Sorted List
+5. Doubly Linked Unsorted List
+6. Doubly Linked Sorted List
+
+Determine the worst-case asymptotic running time of all seven operations and validate the order of growth using Gnuplot.
+
+---
+
+## Data Structures Used
+
+### 1. Unsorted Array
+Elements are stored without maintaining any particular order.
+
+### 2. Sorted Array
+Elements are maintained in increasing order.
+
+### 3. Singly Linked Unsorted List
+Elements are stored in nodes connected using a `next` pointer, without maintaining order.
+
+### 4. Singly Linked Sorted List
+Elements are stored in increasing order using a singly linked list.
+
+### 5. Doubly Linked Unsorted List
+Each node contains `prev` and `next` pointers, but elements are not sorted.
+
+### 6. Doubly Linked Sorted List
+Elements are maintained in sorted order using a doubly linked list.
+
+## Worst Case Time Complexities
 
 ### 1. Unsorted Array
 
