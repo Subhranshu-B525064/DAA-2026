@@ -158,6 +158,12 @@ The C program:
 
 # 2.Standard Merge Sort vs Modified 3-Way Merge Sort
 
+## Problem Statement
+
+Consider the following modification to merge sort: divide the input array into thirds (rather than halves), recursively sort each third, and finally combine the results using a three-way merge subroutine. What is the worst-case running time of this modified merge sort? Write a C program to validate your claim by plotting the order of growth for both the merge sort discussed in the class and the modified merge sort described above.
+
+---
+
 ### Algorithm: Comparing Merge Sort and Modified 3-Way Merge Sort
 
 **Step 1:** Start.
@@ -274,6 +280,22 @@ Opening GNUPlot...
 
 <img width="1356" height="690" alt="image" src="https://github.com/user-attachments/assets/10421e75-d51f-4a80-849a-b25363967396" />
 
+## 4. Experimental Validation
+
+A C program is used to compare the order of growth of both algorithms.
+
+The program counts the number of comparisons for different input sizes and stores the results in `data.txt`.
+
+GNUplot is used to plot the results.
+
+- X-axis: Input Size (n)
+- Y-axis: Number of Comparisons
+
+The graph compares the growth of 2-way and 3-way merge sort.
+
+---
+
+
 ### Conclusion: Standard vs. 3-Way Merge Sort
 
 Although both algorithms have a theoretical time complexity of **$O(n \log n)$**, empirical data proves that **Standard 2-Way Merge Sort is significantly more efficient in practice**.
@@ -285,6 +307,21 @@ Although both algorithms have a theoretical time complexity of **$O(n \log n)$**
 The heavy cost of doing double the comparisons during every merge step completely cancels out the benefit of having fewer recursion levels. Because of this, **Standard 2-Way Merge Sort** performs far fewer total operations and remains the superior approach.
 
 # 3.Merge K Sorted Arrays
+
+## Problem Statement: Merging k Sorted Arrays
+
+**Objective:** Suppose you are given `k` sorted arrays, each with `n` elements, and you want to combine them into a single sorted array of `k * n` elements[cite: 2].
+
+### Method 1 (Sequential Merge)
+One approach is to use the merge subroutine repeatedly[cite: 2]:
+* Merge the first two arrays, then merge the result with the third array, then with the fourth array, and so on until you merge in the k-th and final input array[cite: 2].
+* **Tasks:** Write a program to validate this idea, and find the worst-case running time of this method[cite: 2].
+
+### Method 2 (Divide and Conquer Merge)
+Consider an algorithm that utilizes a pair-wise approach[cite: 2]:
+* First, divide the `k` arrays into `k/2` pairs of arrays and use the merge subroutine to combine each pair, resulting in `k/2` sorted arrays of length `2n`[cite: 2].
+* The algorithm repeats this step until there is only one sorted array of length `k * n`[cite: 2].
+* **Tasks:** Write a program to validate this idea, and determine the running time of this method as a function of `n` and `k`[cite: 2].
 
 ### Algorithm: Sequential Merge(Method 1)
 
