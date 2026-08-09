@@ -10,6 +10,38 @@
 
 ---
 
+# 1.Dictionary Operations:
+
+## Time Complexities
+
+### 1. Unsorted Array
+
+For an unsorted array implementation of the dictionary, let `n` be the number of elements in the dictionary. The asymptotic worst-case running times for all seven primary operations are as follows:
+
+| Operation | Worst-Case Time | Reason |
+| :--- | :---: | :--- |
+| **Search(D, k)** | **$O(n)$** | In the worst case, we may need to scan the entire array linearly to find key `k`. |
+| **Insert(D, x)** | **$O(1)$** | Since the array is unsorted, `x` can be inserted directly at the next available position (e.g., the end of the array). |
+| **Delete(D, x)** | **$O(n)$** | Although `x` is given as a pointer or index, deleting it may require shifting the remaining elements left to maintain the contiguous array structure. |
+| **Maximum(D)** | **$O(n)$** | Since the array is unsorted, every element must be checked to find the largest key. |
+| **Minimum(D)** | **$O(n)$** | Since the array is unsorted, every element must be checked to find the smallest key. |
+| **Predecessor(D, x)** | **$O(n)$** | We may need to examine all elements to find the largest key that is strictly smaller than `x`. |
+| **Successor(D, x)** | **$O(n)$** | We may need to examine all elements to find the smallest key that is strictly larger than `x`. |
+
+### 2. Sorted Array
+
+For a sorted array implementation of the dictionary, let `n` be the number of elements in the dictionary. Since the array is maintained in sorted order, searching can be optimized, but modifying the array requires shifting elements. The asymptotic worst-case running times are as follows:
+
+| Operation | Worst-Case Time | Reason |
+| :--- | :---: | :--- |
+| **Search(D, k)** | **$O(\log n)$** | Binary search can be used to locate the key efficiently in logarithmic time. |
+| **Insert(D, x)** | **$O(n)$** | After finding the correct position for `x`, subsequent elements must be shifted to the right to make space for the new item. |
+| **Delete(D, x)** | **$O(n)$** | Even though `x` is given as a pointer or index, removing the element requires shifting all subsequent elements left to close the gap and maintain the contiguous structure. |
+| **Maximum(D)** | **$O(1)$** | The largest element is always predictably located at the last occupied position of the array. |
+| **Minimum(D)** | **$O(1)$** | The smallest element is always located at the very first position (index 0) of the array. |
+| **Predecessor(D, x)** | **$O(1)$** | Since the position of `x` is already known (given as a pointer/index) and the array is sorted, its predecessor is simply the element immediately before it `(index - 1)`. |
+| **Successor(D, x)** | **$O(1)$** | Similarly, since the position of `x` is known, its successor is the element immediately after it `(index + 1)`. |
+
 
 
 # 2.Standard Merge Sort vs Modified 3-Way Merge Sort
@@ -112,27 +144,18 @@ $$\mathbf{O(n \log n)}$$
 
 Enter maximum value of n: 1000
 
- n      Merge Sort      Modified Merge Sort
- 
-100     541             846
-
-200     1184            1923
-
-300     1910            3141
-
-400     2685            4365
-
-500     3462            5589
-
-600     4262            6869
-
-700     5092            8189
-
-800     5942            9539
-
-900     6812            10939
-
-1000    7702            12389
+| n | Merge Sort | Modified Merge Sort |
+| :---: | :---: | :---: |
+| **100** | 541 | 846 |
+| **200** | 1184 | 1923 |
+| **300** | 1910 | 3141 |
+| **400** | 2685 | 4365 |
+| **500** | 3462 | 5589 |
+| **600** | 4262 | 6869 |
+| **700** | 5092 | 8189 |
+| **800** | 5942 | 9539 |
+| **900** | 6812 | 10939 |
+| **1000** | 7702 | 12389 |
 
 Opening GNUPlot...
 
