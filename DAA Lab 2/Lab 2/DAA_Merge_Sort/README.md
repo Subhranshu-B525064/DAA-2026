@@ -1,5 +1,11 @@
 # 2.Standard Merge Sort vs Modified 3-Way Merge Sort
 
+## Problem Statement
+
+Consider the following modification to merge sort: divide the input array into thirds (rather than halves), recursively sort each third, and finally combine the results using a three-way merge subroutine. What is the worst-case running time of this modified merge sort? Write a C program to validate your claim by plotting the order of growth for both the merge sort discussed in the class and the modified merge sort described above.
+
+---
+
 ### Algorithm: Comparing Merge Sort and Modified 3-Way Merge Sort
 
 **Step 1:** Start.
@@ -115,6 +121,21 @@ Opening GNUPlot...
 
 
 <img width="1356" height="690" alt="image" src="https://github.com/user-attachments/assets/10421e75-d51f-4a80-849a-b25363967396" />
+
+## 4. Experimental Validation
+
+A C program is used to compare the order of growth of both algorithms.
+
+The program counts the number of comparisons for different input sizes and stores the results in `data.txt`.
+
+GNUplot is used to plot the results.
+
+- X-axis: Input Size (n)
+- Y-axis: Number of Comparisons
+
+The graph compares the growth of 2-way and 3-way merge sort.
+
+---
 
 ### Conclusion: Standard vs. 3-Way Merge Sort
 
