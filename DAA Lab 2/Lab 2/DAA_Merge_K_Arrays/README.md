@@ -1,5 +1,20 @@
 # 3.Merge K Sorted Arrays
 
+## Problem Statement: Merging k Sorted Arrays
+
+**Objective:** Suppose you are given `k` sorted arrays, each with `n` elements, and you want to combine them into a single sorted array of `k * n` elements.
+
+### Method 1 (Sequential Merge)
+One approach is to use the merge subroutine repeatedly.
+* Merge the first two arrays, then merge the result with the third array, then with the fourth array, and so on until you merge in the k-th and final input array.
+* **Tasks:** Write a program to validate this idea, and find the worst-case running time of this method.
+
+### Method 2 (Divide and Conquer Merge)
+Consider an algorithm that utilizes a pair-wise approach.
+* First, divide the `k` arrays into `k/2` pairs of arrays and use the merge subroutine to combine each pair, resulting in `k/2` sorted arrays of length `2n`.
+* The algorithm repeats this step until there is only one sorted array of length `k * n`.
+* **Tasks:** Write a program to validate this idea, and determine the running time of this method as a function of `n` and `k`
+
 ### Algorithm: Sequential Merge(Method 1)
 
 **Step 1:** Start.
