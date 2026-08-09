@@ -135,4 +135,13 @@ For a doubly linked sorted list implementation of the dictionary, let `n` be the
 | **Predecessor(D, x)** | **$O(1)$** | Since the list is sorted and doubly linked, the logical predecessor is exactly the structural previous node, accessible instantly via `x->prev`. |
 | **Successor(D, x)** | **$O(1)$** | Since the list is sorted, the logical successor is exactly the structural next node, accessible instantly via `x->next`. |
 
+## Program Description
 
+The C program:
+
+- Implements all six data structures.
+- Implements all seven Dictionary operations.
+- Demonstrates the operations using sample data.
+- Displays the worst-case complexity comparison.
+- Generates `operations.dat` containing operation-growth data.
+- Generates `plot.gp`, a Gnuplot script used to plot the results.
