@@ -110,8 +110,11 @@ $$T(n) = 7^k T(n/2^k) + cn^2 \sum_{i=0}^{k-1} \left(\frac{7}{4}\right)^i$$
 **Step 4: Apply the Base Case**
 
 The recursion hits the base case when the matrix size becomes 1. 
+
 $$\frac{n}{2^k} = 1$$
+
 $$n = 2^k$$
+
 $$k = \log_2 n$$
 
 **Step 5: Simplify the Equation**
@@ -127,6 +130,7 @@ Substitute $k = \log_2 n$ into the geometric ratio:
 $$\left(\frac{7}{4}\right)^k = \frac{7^k}{4^k} = \frac{n^{\log_2 7}}{n^{\log_2 4}} = \frac{n^{\log_2 7}}{n^2}$$
 
 Now, plug this back into the total work equation:
+
 $$Total \ Work = cn^2 \cdot \frac{4}{3} \left( \frac{n^{\log_2 7}}{n^2} - 1 \right) = \frac{4c}{3} (n^{\log_2 7} - n^2)$$
 
 **Step 6: Final Time Complexity**
