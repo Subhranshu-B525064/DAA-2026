@@ -10,13 +10,12 @@ The program should display the complete trajectory, number of steps, and maximum
 
 ### Algorithm
 
-A. Collatz Next Value
+ A. Collatz Next Value
 * Check whether the current number is even. If it is even, calculate:
-  $$n = \frac{n}{2}$$
-* If it is odd, check whether calculating $3n + 1$ will cause an unsigned integer overflow using the condition:
-  $$n > \frac{\text{ULLONG\_MAX} - 1}{3}$$
+  $n = n / 2$
+* If it is odd, check whether calculating $3n + 1$ will cause an unsigned integer overflow
 * If overflow is possible, set the overflow flag. Otherwise, calculate:
-  $$n = 3n + 1$$
+  $n = 3n + 1$
 
 B. Single Trajectory Analysis
 * Initialize the current value and maximum value with the starting number.
